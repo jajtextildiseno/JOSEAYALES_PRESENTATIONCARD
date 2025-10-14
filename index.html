@@ -47,39 +47,44 @@
       max-width: 400px;
       border-radius: 10px;
       display: block;
-      margin-bottom: 15px;
       object-fit: contain;
     }
 
     .descripcion {
-      font-size: 20px;
+      font-size: 18px;
       font-weight: normal;
       margin-bottom: 20px;
     }
 
     .nombre {
-      font-size: 40px;
+      font-size: 30px;
       font-weight: bold;
       margin: 0;
     }
 
     .cargo {
-      font-size: 25px;
+      font-size: 22px;
       font-weight: bold;
       margin: 5px 0 15px 0;
     }
 
     .contacto {
-      font-size: 24px;
-      font-weight: normal;
-      line-height: 1.5;
-      margin-bottom: 10px;
+      font-size: 22px;
+      text-decoration: none;
+      color: #ffffff;
+      margin: 5px 0;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
     }
 
     .contacto i {
-      margin-right: 8px;
-      font-size: 24px;
+      font-size: 22px;
       vertical-align: middle;
+    }
+
+    .contacto:hover {
+      color: #cccccc;
     }
 
     .fa-envelope, .fa-weixin {
@@ -89,7 +94,7 @@
     .ubicacion {
       font-size: 14px;
       font-weight: normal;
-      margin-top: 16;
+      margin-top: 16px;
       opacity: 0.9;
     }
   </style>
@@ -103,15 +108,15 @@
     <h1 class="nombre">Jose Ayales Jop</h1>
     <h2 class="cargo">CEO</h2>
 
-    <p class="contacto">
+    <a href="mailto:jayales@jajtextil.com" class="contacto">
       <i class="fa-regular fa-envelope"></i>
-      jayales@jajtextil.com
-    </p>
+      <span>jayales@jajtextil.com</span>
+    </a>
 
-    <p class="contacto">
+    <a href="https://u.wechat.com/kPcelwis9XgQHw3f-7jrT1o?s=2" target="_blank" class="contacto">
       <i class="fa-brands fa-weixin"></i>
-      +506 7106-1916
-    </p>
+      <span>+506 7106-1916</span>
+    </a>
 
     <p class="ubicacion">San José, Costa Rica</p>
   </div>
