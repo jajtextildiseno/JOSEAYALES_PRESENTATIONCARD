@@ -27,60 +27,71 @@
       min-height: 100vh;
     }
 
+    /* Responsive card that keeps proportions on any phone */
     .tarjeta {
       background: rgb(35, 35, 35);
-      border-radius: 20px;
+      border-radius: 1.5rem;
       box-shadow: 0 0 15px rgba(0, 0, 0, 0.25);
-      padding: 30px 25px;
+      /* Use viewport-based sizing but cap with max-width for large screens */
+      width: min(92vw, 400px);
+      padding: min(6vw, 30px) min(5vw, 25px);
       text-align: center;
       display: flex;
       flex-direction: column;
       align-items: center;
+      /* Allow card to scale down but keep a reasonable minimum */
       max-width: 400px;
-      min-width: 100px;
+      min-width: 160px;
+      gap: clamp(8px, 1.6vw, 20px);
     }
 
     img {
       width: 100%;
-      height: auto;
-      max-width: 400px;
-      border-radius: 10px;
+      /* Keep aspect ratio and don't exceed card width */
+      aspect-ratio: 16 / 9;
+      max-height: 45vh;
+      border-radius: clamp(6px, 1.4vw, 10px);
       display: block;
       object-fit: contain;
     }
 
+    /* Use clamp for font sizes so they scale smoothly between small phones and larger screens */
     .descripcion {
-      font-size: 18px;
-      font-weight: normal;
-      margin-bottom: 20px;
-      margin-top: -5px;
+      font-size: clamp(12px, 3.2vw, 18px);
+      font-weight: 400;
+      margin-bottom: 0;
+      margin-top: -4px;
     }
 
     .nombre {
-      font-size: 30px;
-      font-weight: bold;
+      font-size: clamp(18px, 6.5vw, 30px);
+      font-weight: 700;
       margin: 0;
+      line-height: 1.05;
     }
 
     .cargo {
-      font-size: 22px;
-      font-weight: bold;
-      margin: 5px 0 15px 0;
+      font-size: clamp(14px, 4.5vw, 22px);
+      font-weight: 700;
+      margin: 6px 0 10px 0;
     }
 
     .contacto {
-      font-size: 22px;
+      font-size: clamp(12px, 4.6vw, 22px);
       text-decoration: none;
       color: #ffffff;
-      margin: 5px 0;
+      margin: 6px 0;
       display: inline-flex;
       align-items: center;
-      gap: 8px;
+      gap: clamp(6px, 2.2vw, 12px);
+      padding: 0.2rem 0.4rem;
+      border-radius: 0.4rem;
     }
 
     .contacto i {
-      font-size: 22px;
+      font-size: clamp(16px, 5.2vw, 22px);
       vertical-align: middle;
+      line-height: 1;
     }
 
     .contacto:hover {
@@ -92,11 +103,19 @@
     }
 
     .ubicacion {
-      font-size: 14px;
-      font-weight: normal;
-      margin-top: 16px;
+      font-size: clamp(11px, 3.6vw, 14px);
+      font-weight: 400;
+      margin-top: 14px;
       opacity: 0.9;
-      margin-top: 20px;
+    }
+
+    /* Small tweak for very narrow screens: center content and reduce spacing */
+    @media (max-width: 320px) {
+      .tarjeta {
+        padding: 12px;
+        gap: 8px;
+      }
+      img { aspect-ratio: auto; height: auto; }
     }
   </style>
 </head>
